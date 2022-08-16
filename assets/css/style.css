@@ -1,0 +1,63 @@
+header {
+    display: flex;
+    background: linear-gradient(135deg, rgb(61, 125, 244) 60%, rgb(40, 5, 144));
+    padding: 1rem;
+    align-content: center;
+    justify-content: space-around;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.searchColumn {
+    display: flex;
+    flex-direction: row;
+}
+
+.displayEl {
+    display: flex;
+    flex-direction: column;
+}
+
+.searchForm {
+    max-width: 360px;
+}
+
+.headerText {
+    display: flex;
+    color: white;
+    font-size: 30pt;
+    font-weight:bolder;
+}
+
+.searchTitle {
+    color: black;
+    font-weight:bolder;
+    padding: 1rem;
+}
+
+.searchForm {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin-bottom: 10px;
+}
+
+.searchInput {
+    margin-bottom: 15px;
+}
+
+.weatherDisplayEl {
+    width: 35%;
+    font-size: 21pt;
+    margin: 13px;
+
+}
+
+.fiveDayEl {
+    width: 35%;
+    font-size: 21pt;
+    margin: 13px;
+}
