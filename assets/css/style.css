@@ -11,6 +11,7 @@ main {
     flex-direction: column;
 }
 
+
 .searchColumn {
     display: flex;
     flex-direction: row;
@@ -19,6 +20,7 @@ main {
 .displayEl {
     display: flex;
     flex-direction: column;
+    height: auto;
 }
 
 .searchForm {
@@ -50,14 +52,14 @@ main {
 }
 
 .weatherDisplayEl {
-    width: 35%;
     font-size: 21pt;
     margin: 13px;
+    height: auto;
 
 }
 
 .fiveDayEl {
-    width: 35%;
     font-size: 21pt;
     margin: 13px;
+    height: auto;
 }

@@ -7,10 +7,6 @@
     <title>Weather Dashboard</title>
     <link
       rel="stylesheet"
-      href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
-    />
-    <link
-      rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
@@ -24,12 +20,19 @@
       <div class="searchColumn">
         <form class="searchForm" action="submit">
           <h3 class="searchTitle">Search for a City:</h3>
-          <input class="searchInput" type="text" />
-          <button class="btn-info" type="submit" name="Search">Search</button>
+          <input class="searchInput" type="text" id="city" />
+          <button class="searchBtn" type="submit" name="Search">Search</button>
         </form>
         <section class="displayEl">
-          <div class="weatherDisplayEl">Current weather:</div>
-          <div class="fiveDayEl">5-day forecast</div>
+          <h1 class="placeName"></h1>
+          <div class="weatherDisplayEl">
+            Current weather:<br />
+            <img class = "icon" src="" alt=""">
+            <p class="conditions"></p>
+            <p class="humidity">Humidity:</p>
+            <p class="speed">Wind speed:</p>
+          </div>
+          <div class="fiveDayEl">5-day forecast<br /></div>
         </section>
       </div>
     </main>
