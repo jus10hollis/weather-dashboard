@@ -59,6 +59,8 @@ main {
 }
 
 .fiveDayEl {
+    display: flex;
+    flex-direction: row;
     font-size: 21pt;
     margin: 13px;
     height: auto;

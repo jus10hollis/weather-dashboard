@@ -17,14 +17,14 @@ if (!cities) {
   localStorage.setItem("city", JSON.stringify(searchInput));
 }
 
-///Structure below I learned from a combination of studying 'Build a Weather App with HTML, CSS & JavaScript by Jonah Lawrence (https://youtu.be/WZNG8UomjSI).
+///Structure below I learned from a combination of studying 'Build a Weather App with HTML, CSS & JavaScript by Jonah Lawrence (https://youtu.be/WZNG8UomjSI), and working with my tutor Jude Clark.
 var weather = {
   apikey: "015bbcf25f5d5872e88411938188665c",
   fetchWeather: function () {
     var requestUrl =
       `https://api.openweathermap.org/data/2.5/weather?q=` +
       cityForm.value +
-      `&unit=imperial&appid=${apikey}`; /// I learned this way of concatenating from my tutor: Jude Clark
+      `&unit=imperial&appid=${apikey}`; /// I learned this from my tutor: Jude Clark
     fetch(requestUrl)
       .then((response) => response.json())
       .then((data) => {
@@ -61,14 +61,22 @@ var weather = {
     const { lat } = coords;
     const { lon } = coords;
     var apiKey = "015bbcf25f5d5872e88411938188665c";
-    var fcastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`;
+    var fcastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&exclude=hourly&appid=${apiKey}`;
 
     fetch(fcastUrl)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+        const { high, low } = data.list[8].main;
+        const { icon, description } = data.list[8].weather;
+        console.log(high, low, icon, description);
         var fiveDay = document.querySelector(".fiveDayEl");
-        fiveDay.appendChild(); // Still need HTML elements to display five forecast cards with weather info.
+        fiveDay.innerHTML = `<h3>5-day forecast</h3><br/>
+          <img src=${icon}><br/>
+          <p>Conditions: ${description}<p/><br/>
+          <p>High temp: ${high}<p/><br/>
+          <p>Low temp: ${low}<p/><br/>`;
+        // Still need HTML elements to display five forecast cards with weather info.
       });
   },
 };
